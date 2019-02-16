@@ -323,7 +323,7 @@ paths:
       parameters:
         - name: orderId
           in: path
-          description: ID of pet that needs to be fetched
+          description: ID of the order that needs to be fetched
           required: true
           schema:
             type: integer
@@ -489,13 +489,13 @@ paths:
     put:
       tags:
         - user
-      summary: Updated user
+      summary: Update user
       description: This can only be done by the logged in user.
       operationId: updateUser
       parameters:
         - name: username
           in: path
-          description: name that need to be deleted
+          description: name that need to be updated
           required: true
           schema:
             type: string
