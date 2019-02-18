@@ -177,53 +177,38 @@ fn main() {
 
     server::new(|| {
         App::new()
-            .resource("/pet", |r| r.method(http::Method::POST).with(add_pet))
-            .resource("/pet", |r| r.method(http::Method::PUT).with(update_pet))
-            .resource("/pet/findByStatus", |r| {
-                r.method(http::Method::GET).with(find_pets_by_status)
+            .resource("/pet", |r| {
+                r.post().with(add_pet);
+                r.put().with(update_pet);
             })
-            .resource("/pet/findByTags", |r| {
-                r.method(http::Method::GET).with(find_pets_by_tags)
-            })
+            .resource("/pet/findByStatus", |r| r.get().with(find_pets_by_status))
+            .resource("/pet/findByTags", |r| r.get().with(find_pets_by_tags))
             .resource("/pet/{petId}", |r| {
-                r.method(http::Method::GET).with(get_pet_by_id);
-                r.method(http::Method::POST).with(update_pet_with_form);
+                r.get().with(get_pet_by_id);
+                r.post().with(update_pet_with_form);
                 r.method(http::Method::DELETE).with(delete_pet);
             })
-            .resource("/pet/{petId}/uploadImage", |r| {
-                r.method(http::Method::POST).with(upload_file)
-            })
-            .resource("/store/inventory", |r| {
-                r.method(http::Method::GET).with(get_inventory)
-            })
-            .resource("/store/order", |r| {
-                r.method(http::Method::POST).with(place_order)
-            })
+            .resource("/pet/{petId}/uploadImage", |r| r.post().with(upload_file))
+            .resource("/store/inventory", |r| r.get().with(get_inventory))
+            .resource("/store/order", |r| r.post().with(place_order))
             .resource("/store/order/{orderId}", |r| {
-                r.method(http::Method::GET).with(get_order_by_id);
+                r.get().with(get_order_by_id);
                 r.method(http::Method::DELETE).with(delete_order);
             })
-            .resource("/user", |r| r.method(http::Method::POST).with(create_user))
+            .resource("/user", |r| r.post().with(create_user))
             .resource("/user/createWithArray", |r| {
-                r.method(http::Method::POST)
-                    .with(create_users_with_array_input)
+                r.post().with(create_users_with_array_input)
             })
             .resource("/user/createWithArray", |r| {
-                r.method(http::Method::POST)
-                    .with(create_users_with_array_input)
+                r.post().with(create_users_with_array_input)
             })
             .resource("/user/createWithList", |r| {
-                r.method(http::Method::POST)
-                    .with(create_users_with_list_input)
+                r.post().with(create_users_with_list_input)
             })
-            .resource("/user/login", |r| {
-                r.method(http::Method::GET).with(login_user)
-            })
-            .resource("/user/logout", |r| {
-                r.method(http::Method::GET).with(logout_user)
-            })
+            .resource("/user/login", |r| r.get().with(login_user))
+            .resource("/user/logout", |r| r.get().with(logout_user))
             .resource("/user/{username}", |r| {
-                r.method(http::Method::GET).with(get_user_by_name);
+                r.get().with(get_user_by_name);
                 r.method(http::Method::PUT).with(update_user);
                 r.method(http::Method::DELETE).with(delete_user);
             })
