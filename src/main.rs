@@ -2,20 +2,20 @@ mod model;
 
 use model::*;
 
-use actix_web::{http, server, App, Form, HttpRequest, HttpResponse, Json, Path, Query, Result};
+use actix_web::{http, server, App, Form, HttpRequest, Json, Path, Query, Result};
 use serde::Deserialize;
 
 use std::collections::HashMap;
 use std::env;
 
 /// Add a new pet to the store
-fn add_pet(_pet: Json<Pet>) -> HttpResponse {
-    HttpResponse::Ok().finish()
+fn add_pet(_pet: Json<Pet>) {
+    unimplemented!();
 }
 
 /// Update an existing pet
-fn update_pet(_pet: Json<Pet>) -> HttpResponse {
-    HttpResponse::Ok().finish()
+fn update_pet(_pet: Json<Pet>) {
+    unimplemented!();
 }
 
 #[derive(Debug, Deserialize)]
@@ -59,14 +59,12 @@ struct UpdatePetByIdForm {
 }
 
 /// Updates a pet in the store with form data
-fn update_pet_with_form(
-    (_path, _form): (Path<PetIdPath>, Form<UpdatePetByIdForm>),
-) -> HttpResponse {
+fn update_pet_with_form((_path, _form): (Path<PetIdPath>, Form<UpdatePetByIdForm>)) {
     unimplemented!();
 }
 
 /// Deletes a pet
-fn delete_pet(_path: Path<PetIdPath>) -> HttpResponse {
+fn delete_pet(_path: Path<PetIdPath>) {
     // TODO: extract header
     unimplemented!();
 }
@@ -106,24 +104,24 @@ fn get_order_by_id(_path: Path<OrderIdPath>) -> Result<Json<Order>> {
 }
 
 /// Delete purchase order by ID
-fn delete_order(_path: Path<OrderIdPath>) -> HttpResponse {
+fn delete_order(_path: Path<OrderIdPath>) {
     unimplemented!();
 }
 
 /// Create user
 ///
 /// This can only be done by the logged in user.
-fn create_user(_user: Json<User>) -> HttpResponse {
+fn create_user(_user: Json<User>) {
     unimplemented!();
 }
 
 /// Creates list of users with given input array
-fn create_users_with_array_input(_user: Json<UserArray>) -> HttpResponse {
+fn create_users_with_array_input(_user: Json<UserArray>) {
     unimplemented!();
 }
 
 /// Creates list of users with given input array
-fn create_users_with_list_input(_user: Json<UserArray>) -> HttpResponse {
+fn create_users_with_list_input(_user: Json<UserArray>) {
     unimplemented!();
 }
 
@@ -142,7 +140,7 @@ fn login_user(_query: Query<LoginUserQuery>) -> Result<String> {
 }
 
 /// Logs out current logged in user session
-fn logout_user(_query: Query<LoginUserQuery>) -> HttpResponse {
+fn logout_user(_query: Query<LoginUserQuery>) {
     unimplemented!();
 }
 
@@ -167,7 +165,7 @@ fn update_user(_path: Path<UsernamePath>) -> Json<User> {
 /// Delete user
 ///
 /// This can only be done by the logged in user.
-fn delete_user(_path: Path<UsernamePath>) -> HttpResponse {
+fn delete_user(_path: Path<UsernamePath>) {
     unimplemented!();
 }
 

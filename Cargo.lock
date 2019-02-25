@@ -56,16 +56,15 @@ name = "actix-petstore"
 version = "0.1.0"
 dependencies = [
  "actix 0.7.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "actix-web 0.7.18 (registry+https://github.com/rust-lang/crates.io-index)",
+ "actix-web 0.7.18 (git+https://github.com/boxdot/actix-web?rev=9814de0f)",
  "env_logger 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.87 (registry+https://github.com/rust-lang/crates.io-index)",
- "uuid 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "actix-web"
 version = "0.7.18"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+source = "git+https://github.com/boxdot/actix-web?rev=9814de0f#9814de0f92986111e0c135475fa9294871b9dc63"
 dependencies = [
  "actix 0.7.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "actix-net 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -110,7 +109,7 @@ dependencies = [
  "tokio-tcp 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "tokio-timer 0.2.10 (registry+https://github.com/rust-lang/crates.io-index)",
  "url 1.7.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "v_htmlescape 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "v_htmlescape 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "version_check 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -1561,21 +1560,20 @@ version = "0.7.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "rand 0.6.5 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde 1.0.87 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "v_escape"
-version = "0.3.2"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "v_escape_derive 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "v_escape_derive 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "version_check 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "v_escape_derive"
-version = "0.2.1"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "nom 4.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1586,12 +1584,11 @@ dependencies = [
 
 [[package]]
 name = "v_htmlescape"
-version = "0.3.2"
+version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "cfg-if 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "v_escape 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "version_check 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "v_escape 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -1683,7 +1680,7 @@ dependencies = [
 [metadata]
 "checksum actix 0.7.9 (registry+https://github.com/rust-lang/crates.io-index)" = "6c616db5fa4b0c40702fb75201c2af7f8aa8f3a2e2c1dda3b0655772aa949666"
 "checksum actix-net 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)" = "8bebfbe6629e0131730746718c9e032b58f02c6ce06ed7c982b9fef6c8545acd"
-"checksum actix-web 0.7.18 (registry+https://github.com/rust-lang/crates.io-index)" = "e9f33c941e5e69a58a6bfef33853228042ed3799fc4b5a4923a36a85776fb690"
+"checksum actix-web 0.7.18 (git+https://github.com/boxdot/actix-web?rev=9814de0f)" = "<none>"
 "checksum actix_derive 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "4300e9431455322ae393d43a2ba1ef96b8080573c0fc23b196219efedfb6ba69"
 "checksum adler32 1.0.3 (registry+https://github.com/rust-lang/crates.io-index)" = "7e522997b529f05601e05166c07ed17789691f562762c7f3b987263d2dedee5c"
 "checksum aho-corasick 0.6.9 (registry+https://github.com/rust-lang/crates.io-index)" = "1e9a933f4e58658d7b12defcf96dc5c720f20832deebe3e0a19efd3b6aaeeb9e"
@@ -1848,9 +1845,9 @@ dependencies = [
 "checksum url 1.7.2 (registry+https://github.com/rust-lang/crates.io-index)" = "dd4e7c0d531266369519a4aa4f399d748bd37043b00bde1e4ff1f60a120b355a"
 "checksum utf8-ranges 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)" = "796f7e48bef87609f7ade7e06495a87d5cd06c7866e6a5cbfceffc558a243737"
 "checksum uuid 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)" = "0238db0c5b605dd1cf51de0f21766f97fba2645897024461d6a00c036819a768"
-"checksum v_escape 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "c8b50688edb86f4c092a1a9fe8bda004b0faa3197100897653809e97e09a2814"
-"checksum v_escape_derive 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "7cd994c63b487fef7aad31e5394ec04b9e24de7b32ea5251c9fb499cd2cbf44c"
-"checksum v_htmlescape 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "020cae817dc82693aa523f01087b291b1c7a9ac8cea5c12297963f21769fb27f"
+"checksum v_escape 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "973c504626bd18920d388344f98cdcafe77affd37f0a69ff946842d8ee1c7ef3"
+"checksum v_escape_derive 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = "4592e378ab72caf41ee682531446526c5e16bb1aaa4f7cd673da893ade308b79"
+"checksum v_htmlescape 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "9bc3140d4809e7f14ea901910b1bc8e80ac0421978690205931c9d569b80d47a"
 "checksum version_check 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "914b1a6776c4c929a602fafd8bc742e06365d4bcbe48c30f9cca5824f70dc9dd"
 "checksum void 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)" = "6a02e4885ed3bc0f2de90ea6dd45ebcbb66dacffe03547fadbb0eeae2770887d"
 "checksum widestring 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "7157704c2e12e3d2189c507b7482c52820a16dfa4465ba91add92f266667cadb"
